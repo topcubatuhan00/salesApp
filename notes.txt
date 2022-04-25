@@ -1,0 +1,6 @@
+navigation 
+stack
+https://github.com/lottie-react-native/lottie-react-native
+axios
+.env oluştudum.
+https://github.com/luggit/react-native-config
