@@ -3,6 +3,7 @@ import { View, Text, Image } from 'react-native';
 import { Formik } from 'formik';
 import styles from './Login.style';
 
+
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 
@@ -23,11 +24,13 @@ const Login = () => {
                         <Input placeholder="Username"
                         value={values.username}
                         onChangeText={handleChange('username')}
+                        iconName="account"
                         />
-
                         <Input placeholder="Password"
                         value={values.password}
                         onChangeText={handleChange('password')}
+                        iconName="key"
+                        isSecure
                         />
                         <Button text="Login" onPress={handleSubmit}/>
                     </View>)}

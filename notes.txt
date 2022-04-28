@@ -5,3 +5,4 @@ axios
 .env oluştudum.
 https://github.com/luggit/react-native-config
 formik
+vector icons but manually
