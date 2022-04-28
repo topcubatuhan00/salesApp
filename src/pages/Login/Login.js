@@ -1,31 +1,26 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import { View, Alert, Image } from 'react-native';
 import { Formik } from 'formik';
 import styles from './Login.style';
-
+import { useDispatch } from 'react-redux';
 import Config from 'react-native-config';
 import usePost from '../../hooks/usePost'
 
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 
-const Login = ({navigation}) => {
+const Login = () => {
     const { data, loading, error, post } = usePost();
-    
-
-    function handleLogin (info){
+    const dispatch = useDispatch();
+    function handleLogin(info) {
         post(Config.API_AUTH_URL, info);
     }
-    
-    if(error && error.message != 'Request failed with status code 401') {
+
+    if (error && error.message != 'Request failed with status code 401') {
         Alert.alert('Dükkan', 'Bir Sorun Var!');
     }
     if (data) {
-        if(data.status == 'Error'){
-            Alert.alert('Dükkan', 'Kullanıcı Adı ya da Parola Hatalı!');
-        }else{
-            navigation.navigate('Products');
-        }
+        dispatch({ type: 'SET_USER', payload: { user } });
     }
 
     return (
@@ -66,3 +61,26 @@ const Login = ({navigation}) => {
 };
 
 export default Login;
+
+const user = {
+    "address": {
+        "geolocation": {
+            "lat": "-37.3159",
+            "long": "81.1496"
+        },
+        "city": "kilcoole",
+        "street": "new road",
+        "number": 7682,
+        "zipcode": "12926-3874"
+    },
+    "id": 1,
+    "email": "john@gmail.com",
+    "username": "johnd",
+    "password": "m38rmF$",
+    "name": {
+        "firstname": "john",
+        "lastname": "doe"
+    },
+    "phone": "1-570-236-7033",
+    "__v": 0
+}
