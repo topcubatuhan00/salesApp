@@ -12,7 +12,7 @@ const Input = ({placeholder, value ,onChangeText, iconName, isSecure}) => {
             style={styles.textInput}
             onChange={onChangeText}
             value={value} 
-            nChangeText={onChangeText}
+            onChangeText={onChangeText}
             placeholderTextColor='black'
             secureTextEntry={isSecure}
             />

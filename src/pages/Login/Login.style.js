@@ -11,5 +11,8 @@ export default StyleSheet.create({
         height: Dimensions.get("window").height /4,
         width: Dimensions.get("window").width,
         resizeMode: 'contain',
+    },
+    innerContainer: {
+        width: '100%',
     }
 });

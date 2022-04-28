@@ -10,7 +10,7 @@ const Detail = ({ route }) => {
     const { id } = route.params;
 
 
-    const { error, data, loading } = useFetch(Config.API_URL + '/' + id.toString());
+    const { error, data, loading } = useFetch(Config.API_PRODUCT_URL + '/' + id.toString());
 
     if (loading) {
         return <Loading />
